@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+  background-image: url('/background.jpeg'); /* Path relative to the public directory */
+  background-size: cover; /* Adjust to cover the entire screen */
+  background-repeat: no-repeat; /* Avoid repetition */
+  background-attachment: fixed; /* Keeps the background fixed during scrolling */
+  background-position: center; /* Center the image */
+  margin: 0; /* Reset default margin */
+  padding: 0; /* Reset default padding */
+}
+.container{
+    width: 70%; 
+    margin: 0 auto; 
+    gap: 0.5rem;
+    font-size: 26px;
+    font-family: "Montserrat", serif;
+}
+
+.genrebutton{
+    font-size: 16px;
+    margin-top: 20px;
+    width: fit-content;
+    margin-bottom: 5px;
+    text-decoration: none;
+    /* border: 3px solid rgb(240, 184, 184); */
+    border-radius: 10px;
+    padding: 0.4rem;
+    background-color: rgb(187, 240, 184);
+}
+
+.gamebutton{
+    font-size: 16px;
+    margin-top: 20px;
+    width: fit-content;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    /* border: 3px solid rgb(240, 184, 184); */
+    border-radius: 10px;
+    padding: 0.4rem;
+    background-color: rgb(187, 240, 184);
+}
+
+.header{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 46px;
+}
+
+.list{
+    list-style-type: none;
+    color: black;
+}
+
+.item{
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.ok:hover{
+    text-decoration: underline;
+}

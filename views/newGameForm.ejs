@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/gameformStyle.css">
+    <title>Add New Game</title>
+</head>
+<body>
+    <h1 class = 'header' style="width: 70%; margin: 0 auto; margin-bottom: 1rem;">Add new game</h1>
+    <%- include("../partials/errors.ejs") %>
+    <form action="/new_game" method="POST" style = "display: flex; flex-direction: column; width: 70%; margin: 0 auto; gap: 0.5rem;">
+        <label for="gameName">Game Name: </label>
+        <input type="text" name="gameName" id="gameName" value= "<%= formData.gameName %>" required>
+        <label for="gameDescription">Game Description: </label>
+        <textarea style = "width: 50%;" rows="7" type="text" name="gameDescription" id="gameDescription"  required><%= formData.gameDescription %></textarea>
+        <label for="gamePrice">Game Price: </label>
+        <input type="text" name="gamePrice" id="gamePrice" value= "<%= formData.gamePrice %>" required>
+        <label for="gameRating">Game Rating out of 5: </label>
+        <input type="text" name="gameRating" id="gameRating" value= "<%= formData.gameRating %>" required>
+        <label for="gameImageUrl">Game Image URL: </label>
+        <input type="url" name="gameImageUrl" id="gameImageUrl" value= "<%= formData.gameImageUrl %>" required>
+
+        <label for="developers">Select Developer(s): </label>
+        <select name="developers" multiple>
+            <% for (let i = 0; i < developers.length; i++) { %>
+                <% let developer = developers[i].developer %>
+                <option value = "<%=developer %>"> <%=developer %></option>
+              <% } %>
+        </select>
+
+        <label for="gneres">Select Genre(s): </label>
+        <select name="genres" multiple>
+            <% for (let i = 0; i < genres.length; i++) { %>
+                <% let genre = genres[i].genre %>
+                <option value = "<%=genre %>""> <%=genre %></option>
+              <% } %>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

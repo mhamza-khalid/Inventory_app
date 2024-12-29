@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title>Games</title>
+</head>
+    <body>
+      <div class="container">
+        <div class="header">Gaming Inventory</div>
+        <a class = 'genrebutton' href="/new_genre">Add New Genre</a>
+        <a class = 'gamebutton' href="/new_game">Add New Game</a>
+        <ul class = 'list'>
+            <% for (let i = 0; i < genresList.length; i++) { %>
+                <li class = 'item'>
+                  <a class = 'item ok' href="/genre/<%= genresList[i].genre %>">
+                    <span style = "color:black"> <%= genresList[i].genre %> </span>
+                  </a>
+                  <a class = 'item' style = "margin-left: 10px; font-size: 14px;" href="delete_genre/<%=genresList[i].genre_id%>">Delete</a>
+                </li>
+                <hr></hr>
+              <% } %>
+        </ul>
+      </div>
+    </body>
+</html>

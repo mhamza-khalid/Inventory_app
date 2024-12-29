@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/genreForm.css">
+    <title>Genre Form</title>
+</head>
+<body>
+    <div style = "display: flex; flex-direction: column; width: 70%; margin: 0 auto; gap: 0.5rem; margin-top: 30px;">
+        <%- include("../partials/errors.ejs") %>
+        <form action="/create_genre" method="POST">
+            <label for="new_genre" class="header">New genre:</label>
+            <input placeholder="Action" type="text" name="new_genre" id="new_genre">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

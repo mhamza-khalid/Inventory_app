@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/cardStyle.css">
+</head>
+<body>
+    <h1 class = 'container genre'><%=genre %></h1>
+    <a class = 'container' href = "/">Go back</a>
+    <div class = 'container wrap'>
+        <% for (let i = 0; i < games.length; i++) { %>
+            <div class = "card">
+              <img src="<%=games[i].gameImageUrl%>" >
+              <div class="gamename"><%= games[i].gameName %></div>
+              <div class="price">Price: $<%= games[i].gamePrice %> </div>
+              <div class="rating">Rating: <%= games[i].game_rating %>/5</div>
+              <div class="description">Description: <%= games[i].gameDescription %></div>
+              <div class="developers">Developer(s):<hr></hr>
+                <% let developers = games[i].developers %>
+                <% for (let j = 0; j < developers.length; j++) { %>
+                    <li>
+                        <%=developers[j].developer %>
+                    </li>
+                <% } %>
+              </div>
+              <div class="genres">Genre(s):<hr></hr>
+                <% let genres = games[i].genres %>
+                <% for (let j = 0; j < genres.length; j++) { %>
+                    <li>
+                        <%=genres[j].genre %>
+                    </li>
+                <% } %>
+              </div>
+              <a class='delete' href = "/delete_game/<%=games[i].gameId %>/<%=genre %>">Delete Game</a>
+            </div>
+        <% } %>
+        <% if(games.length == 0) {%>
+            <div class="emptymessage">Start by adding a new game to <%=genre %>!</div>
+        <% } %>
+    </div>
+</body>
+</html>
